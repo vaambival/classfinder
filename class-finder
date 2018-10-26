@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+mkdir bin
+javac -d bin src/main/java/com/simbirsoft/classfinder/constants/*.java
+javac -d bin -cp ./bin src/main/java/com/simbirsoft/classfinder/dto/*.java
+javac -d bin -cp ./bin src/main/java/com/simbirsoft/classfinder/rule/SearchRule.java
+javac -d bin -cp ./bin src/main/java/com/simbirsoft/classfinder/rule/*.java
+javac -d bin -cp ./bin src/main/java/com/simbirsoft/classfinder/factory/*.java
+javac -d bin -cp ./bin src/main/java/com/simbirsoft/classfinder/ClassFinder.java
+java -cp ./bin com.simbirsoft.classfinder.ClassFinder "$@"
+rm -rf ./bin
